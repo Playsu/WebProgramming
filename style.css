@@ -1,7 +1,7 @@
 :root {
   font-family: Arial, Helvetica, sans-serif;
-  color: #1f2937;
-  background: #eef4ff;
+  color: #d6e5df;
+  background: #080b0a;
 }
 
 * {
@@ -18,16 +18,16 @@ body {
   align-items: center;
   justify-content: center;
   padding: 32px 16px;
-  background: linear-gradient(135deg, #eef4ff 0%, #dbeafe 100%);
+  background: radial-gradient(circle at top, #19332d 0%, #0c1512 42%, #080b0a 100%);
 }
 
 .card {
   width: min(100%, 620px);
   padding: 40px;
-  background: #ffffff;
-  border: 1px solid #dbe3f0;
+  background: #111816;
+  border: 1px solid #263b34;
   border-radius: 16px;
-  box-shadow: 0 18px 45px rgba(31, 41, 55, 0.12);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.4);
 }
 
 .card__intro {
@@ -36,7 +36,7 @@ body {
 
 .eyebrow {
   margin: 0 0 8px;
-  color: #2563eb;
+  color: #83c7a9;
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -45,13 +45,13 @@ body {
 
 h1 {
   margin: 0 0 10px;
-  color: #111827;
+  color: #f0f7f3;
   font-size: clamp(1.8rem, 4vw, 2.35rem);
 }
 
 .intro-text {
   margin: 0;
-  color: #6b7280;
+  color: #9db1a8;
   line-height: 1.5;
 }
 
@@ -72,7 +72,7 @@ h1 {
 }
 
 label {
-  color: #374151;
+  color: #c7d8d0;
   font-size: 0.9rem;
   font-weight: 700;
 }
@@ -82,23 +82,23 @@ select {
   width: 100%;
   min-height: 46px;
   padding: 0 13px;
-  border: 1px solid #cbd5e1;
+  border: 1px solid #385248;
   border-radius: 8px;
-  background: #ffffff;
-  color: #1f2937;
+  background: #0c1210;
+  color: #e3eee8;
   font: inherit;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 input::placeholder {
-  color: #9ca3af;
+  color: #71867c;
 }
 
 input:focus,
 select:focus {
   outline: none;
-  border-color: #2563eb;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+  border-color: #83c7a9;
+  box-shadow: 0 0 0 3px rgba(131, 199, 169, 0.15);
 }
 
 button {
@@ -106,8 +106,8 @@ button {
   margin-top: 6px;
   border: 0;
   border-radius: 8px;
-  background: #2563eb;
-  color: #ffffff;
+  background: #5b9f80;
+  color: #08100c;
   cursor: pointer;
   font: inherit;
   font-weight: 700;
@@ -115,11 +115,22 @@ button {
 }
 
 button:hover {
-  background: #1d4ed8;
+  background: #83c7a9;
 }
 
 button:active {
   transform: translateY(1px);
+}
+
+.success-message {
+  margin: 0;
+  padding: 18px;
+  border: 1px solid #4f8d70;
+  border-radius: 8px;
+  background: #14291f;
+  color: #bce5cd;
+  line-height: 1.5;
+  text-align: center;
 }
 
 @media (max-width: 560px) {

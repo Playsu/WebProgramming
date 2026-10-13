@@ -53,22 +53,50 @@
           <input type="email" id="email" name="email" autocomplete="email" placeholder="you@example.com" required>
         </div>
 
+        <div class="form-group">
+          <label for="phone">Phone number</label>
+          <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="+1 555 123 4567" required>
+        </div>
+
         <button type="submit">Submit information</button>
       </form>
-      <p class="success-message" id="success-message" role="status" aria-live="polite" hidden>
-        Thank you! Your information has been submitted successfully.
-      </p>
+      <div class="summary" id="summary" role="status" aria-live="polite" hidden>
+        <p class="eyebrow">All set</p>
+        <h2 tabindex="-1">Your information</h2>
+        <p class="summary__intro">Thank you for sharing your details. Please review your submission below.</p>
+        <dl class="summary__list">
+          <div><dt>Name</dt><dd id="summary-name"></dd></div>
+          <div><dt>Date of birth</dt><dd id="summary-date"></dd></div>
+          <div><dt>Gender</dt><dd id="summary-gender"></dd></div>
+          <div><dt>Country</dt><dd id="summary-country"></dd></div>
+          <div><dt>Email</dt><dd id="summary-email"></dd></div>
+          <div><dt>Phone</dt><dd id="summary-phone"></dd></div>
+        </dl>
+      </div>
     </section>
   </main>
   <script>
     const profileForm = document.getElementById('profile-form');
-    const successMessage = document.getElementById('success-message');
+    const summary = document.getElementById('summary');
+    const genderLabels = {
+      male: 'Male',
+      female: 'Female',
+      'prefer-not-to-say': 'Prefer not to say'
+    };
 
     profileForm.addEventListener('submit', (event) => {
       event.preventDefault();
-      successMessage.hidden = false;
+      const formData = new FormData(profileForm);
+      document.getElementById('summary-name').textContent =
+        `${formData.get('first_name')} ${formData.get('last_name')}`;
+      document.getElementById('summary-date').textContent = formData.get('date_of_birth');
+      document.getElementById('summary-gender').textContent = genderLabels[formData.get('gender')];
+      document.getElementById('summary-country').textContent = formData.get('country');
+      document.getElementById('summary-email').textContent = formData.get('email');
+      document.getElementById('summary-phone').textContent = formData.get('phone');
       profileForm.hidden = true;
-      successMessage.focus();
+      summary.hidden = false;
+      summary.querySelector('h2').focus();
     });
   </script>
 </body>

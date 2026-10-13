@@ -122,7 +122,7 @@ button:active {
   transform: translateY(1px);
 }
 
-.success-message {
+.summary {
   margin: 0;
   padding: 18px;
   border: 1px solid #4f8d70;
@@ -130,7 +130,47 @@ button:active {
   background: #14291f;
   color: #bce5cd;
   line-height: 1.5;
-  text-align: center;
+}
+
+.summary h2 {
+  margin: 0 0 8px;
+  color: #f0f7f3;
+  font-size: 1.5rem;
+}
+
+.summary__intro {
+  margin: 0 0 18px;
+  color: #9db1a8;
+}
+
+.summary__list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+}
+
+.summary__list div {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(131, 199, 169, 0.18);
+}
+
+.summary__list div:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.summary__list dt {
+  color: #9db1a8;
+  font-size: 0.9rem;
+}
+
+.summary__list dd {
+  margin: 0;
+  color: #e3eee8;
+  overflow-wrap: anywhere;
 }
 
 @media (max-width: 560px) {
@@ -140,5 +180,10 @@ button:active {
 
   .form-row {
     grid-template-columns: 1fr;
+  }
+
+  .summary__list div {
+    grid-template-columns: 1fr;
+    gap: 2px;
   }
 }
